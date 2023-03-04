@@ -1,3 +1,6 @@
+"""TO work with the django models we are using here serializer which is of django rest_framework:
+here we create a new python file name as serializers.py inside app:"""
+
 from .models import Price_Calculate
 from rest_framework import serializers
 
