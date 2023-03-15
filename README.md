@@ -59,7 +59,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'price',
-    'rest_framework'
+    'rest_framework',
+    'celery',
+    'django_celery_results',
+    'django_celery_beat',
 ]
 ```
 
@@ -131,4 +134,40 @@ Open your browser at <a href="http://127.0.0.1:8000/items/5?q=somequery" class="
 
 
 
+## Celery Beat
 
+<p> Using Celery Beat in django for sending the earnings report to the finance department regarding every day at 4 p.m </p>
+
+* Created the file Celery.py inside pricing module where we have the settings.py of the project
+* Created the file Tasks.py to write a task that to be perform inside the celery in price app
+* Add celery app inside __init__.py file 
+* Connect to the smtp server for sending the email  and have a secure connection
+
+
+
+<p> To schedule the email task on load of url we can run the worker command of celery.
+
+~~~tex
+celery -A pricing_module worker -l info
+~~~
+
+
+
+To schedule the email task everyday we can add our scheduler using Beat in celery.py file
+
+```python
+app.conf.beat_schedule = {
+    'send-mail-every-day-at-4pm': {
+        'task': 'price.tasks.send_email_task',
+        'schedule': crontab(hour=16, minute=0),
+    }
+}
+```
+
+ for this to make execute we run the beat command of celery.
+
+~~~ 
+celery -A pricing_module beat -l info
+~~~
+
+This will scheduler the task to send the mail every day at 4 pm.
