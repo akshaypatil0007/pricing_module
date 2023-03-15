@@ -154,20 +154,6 @@ DEFAULT_FROM_EMAIL = 'Celery <itsmeakkii0@gmail.com>'
 
 
 
-EMAIL_HOST = 'smtp.fastmail.com'
-EMAIL_PORT = 587
-# EMAIL_APP_PASSWORD = 'yd7ffyktqxtbek68'
-EMAIL_HOST_USER = 'itsmeakkii0@fastmail.com'
-EMAIL_HOST_PASSWORD = 'yd7ffyktqxtbek68'
-# EMAIL_USE_TLS = False
-EMAIL_USE_SSL = False
-EMAIL_USE_TLS = True
-
-
-
-
-
-
 # celery setting.
 CELERY_CACHE_BACKEND = 'default'
 
