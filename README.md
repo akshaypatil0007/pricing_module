@@ -12,8 +12,7 @@ djangorestframework==3.14.0
 ## Installation
 
 ```
-python3 -m pip install -U Django
-pip3 install djangorestframework
+pip3 install -r requirement.txt
 ```
 
 ### Build Django Project
@@ -116,20 +115,20 @@ $ python3 manage.py runserver 127.0.0.1:8000
 
 Open your browser at <a href="http://127.0.0.1:8000/items/5?q=somequery" class="external-link" target="_blank">http://127.0.0.1:8000/admin/ </a>
 
-> for open the django admin panel 
+> To open the django admin panel 
 >
 > * username - price
 > * password - price
 
 Open your browser at <a href="http://127.0.0.1:8000/items/5?q=somequery" class="external-link" target="_blank">http://127.0.0.1:8000/user/ </a>
 
-> for open the list of all user and add new user
+> To open the list of all user and add new user
 
 Open your browser at <a href="http://127.0.0.1:8000/items/5?q=somequery" class="external-link" target="_blank">http://127.0.0.1:8000/user/10 </a>
 
-> for open the specific user list with the modification and deletion of user
+> To open the specific user list with the modification and deletion of user
 >
-> * 10 using after / is for the user id
+
 
 
 
